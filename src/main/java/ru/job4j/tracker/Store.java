@@ -4,6 +4,9 @@ import ru.job4j.tracker.model.Item;
 
 import java.util.List;
 
+/**
+ * Давайте теперь опишем интерфейс нашего хранилища.
+ */
 public interface Store {
     Item add(Item item);
 

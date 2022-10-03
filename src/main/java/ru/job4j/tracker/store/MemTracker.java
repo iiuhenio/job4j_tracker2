@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Далее реализуйте Store для MemTracker. Это нужно для достижения полиморфизма.
+ */
 public class MemTracker implements Store {
 
     private final List<Item> items = new ArrayList<>();
