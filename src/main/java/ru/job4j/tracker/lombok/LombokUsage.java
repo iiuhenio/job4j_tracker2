@@ -19,5 +19,25 @@ public class LombokUsage {
         category.getName();
         category.setName("name");
         System.out.println(category);
+
+        var role = Role.of()
+                .id(1)
+                .name("ADMIN")
+                .accessBy("create")
+                .accessBy("update")
+                .accessBy("read")
+                .accessBy("delete")
+                .build();
+        System.out.println(role);
+
+        var permission = Permission.of()
+                .id(1)
+                .name("test")
+                .accessBy("1")
+                .accessBy("2")
+                .accessBy("3")
+                .build();
+
+        System.out.println(permission);
     }
 }
