@@ -21,4 +21,7 @@ public class Item {
 
     public Item(int i, String name, LocalDateTime now) {
     }
+
+    public Item(String item) {
+    }
 }
