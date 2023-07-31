@@ -1,1 +1,1 @@
-ALTER TABLE items DROP COLUMN checked CASCADE;
+ALTER TABLE items DROP COLUMN checked;

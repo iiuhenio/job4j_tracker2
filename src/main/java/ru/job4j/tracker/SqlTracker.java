@@ -4,6 +4,7 @@ import ru.job4j.tracker.model.Item;
 
 import java.io.InputStream;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -18,6 +19,9 @@ import java.util.Properties;
 public class SqlTracker implements Store, AutoCloseable {
 
     private Connection cn;
+
+    public SqlTracker(Connection connection) {
+    }
 
     public void init() {
         try (InputStream in = SqlTracker.class.getClassLoader().getResourceAsStream("app.properties")) {
@@ -132,7 +136,7 @@ public class SqlTracker implements Store, AutoCloseable {
     public Item findById(int id) {
         Item item = null;
         try (PreparedStatement statement =
-                     cn.prepareStatement("select * from items where id = ?")) {
+                     cn.prepareStatement("select * from items")) {
             statement.setInt(1, id);
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {
@@ -147,4 +151,28 @@ public class SqlTracker implements Store, AutoCloseable {
         }
         return item;
     }
+
+    /**
+    public Item newMethod() throws SQLException {
+        PreparedStatement statement = cn.prepareStatement("select * from items");
+        ResultSet rs = statement.executeQuery();
+        int id = rs.getInt(1);
+        String name = rs.getString(2);
+        LocalDateTime created = rs.getTimestamp(3).toLocalDateTime();
+        Item item = new Item(id, name, created);
+        return item;
+    }
+
+    public Item findById2(int id) throws SQLException {
+        try (PreparedStatement statement =
+                     cn.prepareStatement("select * from items")) {
+            statement.setInt(1, id);
+            ResultSet rs = statement.executeQuery();
+            newMethod();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return newMethod();
+    }
+     */
 }
