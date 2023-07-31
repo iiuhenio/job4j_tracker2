@@ -22,7 +22,7 @@ public class CreateAction implements UserAction {
     @Override
     public boolean execute(Input input, Store tracker) {
         String name = input.askStr("Enter name: ");
-        Item item = new Item(name);
+        Item item = new Item();
         tracker.add(item);
         out.println("Item successfully added!");
         return true;

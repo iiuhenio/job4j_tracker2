@@ -23,7 +23,7 @@ public class ReplaceAction implements UserAction {
     public boolean execute(Input input, Store tracker) {
         int id = Integer.parseInt(input.askStr("Enter id: "));
         String name = input.askStr("Enter name: ");
-        if (tracker.replace(id, new Item(name))) {
+        if (tracker.replace(id, new Item())) {
             out.println("Item is successfully replaced!");
         } else {
             out.println("Wrong id!");
