@@ -13,5 +13,11 @@ public class LombokUsage {
         var item = new Item(1, "name", LocalDateTime.now());
         item.setName("newName");
         System.out.println(item);
+
+        var category = new Category(1);
+        category.getId();
+        category.getName();
+        category.setName("name");
+        System.out.println(category);
     }
 }
