@@ -73,6 +73,7 @@ public class SqlTrackerTest {
         Item item = new Item("item");
         tracker.add(item);
         assertEquals(tracker.findById(item.getId()), item);
+
     }
 
     @Test
