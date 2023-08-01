@@ -14,12 +14,6 @@ public class LombokUsage {
         item.setName("newName");
         System.out.println(item);
 
-        var category = new Category(1);
-        category.getId();
-        category.getName();
-        category.setName("name");
-        System.out.println(category);
-
         var role = Role.of()
                 .id(1)
                 .name("ADMIN")
