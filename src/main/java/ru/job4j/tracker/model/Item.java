@@ -19,9 +19,13 @@ public class Item {
     public Item() {
     }
 
-    public Item(int i, String name, LocalDateTime now) {
+    public Item(int id, String name, LocalDateTime created) {
+        this.id = id;
+        this.name = name;
+        this.created = created;
     }
 
-    public Item(String item) {
+    public Item(String name) {
+        this.name = name;
     }
 }
