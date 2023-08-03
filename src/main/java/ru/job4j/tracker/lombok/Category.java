@@ -3,7 +3,8 @@ package ru.job4j.tracker.lombok;
 import lombok.*;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class Category {
     @Getter
@@ -13,7 +14,4 @@ public class Category {
     @Setter
     private String name;
 
-    public Category(int id) {
-        this.id = id;
-    }
 }
